@@ -1,4 +1,4 @@
-import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Index, OneToMany, ManyToOne } from 'typeorm'
+/*import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Index, OneToMany, ManyToOne } from 'typeorm'
 import User from '../users/entity'
 
 export type Symbol = 'x' | 'o'
@@ -52,4 +52,53 @@ export class Player extends BaseEntity {
 
   @Column('char', {length: 1})
   symbol: Symbol
+}*/
+
+import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Index, OneToMany, ManyToOne } from 'typeorm'
+import User from '../users/entity'
+
+export type Paddle = 'left' | 'right'
+type Status = 'pending' | 'started' | 'finished'
+
+@Entity()
+export class Game extends BaseEntity {
+
+  @PrimaryGeneratedColumn()
+  id?: number
+
+  @Column('integer', {nullable: true})
+  winner: number
+
+  @Column('text', {default: 'pending'})
+  status: Status
+
+
+  @OneToMany(_ => Player, player => player.game, {eager:true})
+  players: Player[]
+}
+
+@Entity()
+@Index(['game', 'user'], {unique:true})
+export class Player extends BaseEntity {
+
+  @PrimaryGeneratedColumn()
+  id?: number
+
+  @ManyToOne(_ => User, user => user.players)
+  user: User
+
+  @ManyToOne(_ => Game, game => game.players)
+  game: Game
+
+  @Column()
+  userId: number
+
+  @Column('text')
+  paddle: Paddle
+
+  @Column('integer', {nullable: true})
+  score: number
+
+  
+
 }

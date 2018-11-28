@@ -1,4 +1,4 @@
-import { ValidatorConstraint, ValidatorConstraintInterface } from 'class-validator'
+/*import { ValidatorConstraint, ValidatorConstraintInterface } from 'class-validator'
 import { Board, Symbol, Row } from './entities'
 
 @ValidatorConstraint()
@@ -50,4 +50,4 @@ export const calculateWinner = (board: Board): Symbol | null =>
 export const finished = (board: Board): boolean =>
   board
     .reduce((a,b) => a.concat(b) as Row)
-    .every(symbol => symbol !== null)
+    .every(symbol => symbol !== null)*/
