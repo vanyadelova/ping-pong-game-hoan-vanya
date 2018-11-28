@@ -51,8 +51,10 @@ class GameDetails extends PureComponent {
 
     return (<Paper className="outer-paper">
       <h1>Game #{game.id}</h1>
+      <h4>Dots and boxes</h4>
 
       <p>Status: {game.status}</p>
+      <img src='/games/dots.png' alt='my image'></img>
 
       {
         game.status === 'started' &&
