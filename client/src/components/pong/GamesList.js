@@ -19,7 +19,6 @@ class GamesList extends PureComponent {
 
   renderGame = (game) => {
     const {users, history} = this.props
-
     return (<Card key={game.id} className="game-card">
       <CardContent>
         <Typography color="textSecondary">

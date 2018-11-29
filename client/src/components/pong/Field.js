@@ -29,7 +29,6 @@ class Field extends React.PureComponent {
     ctx.font = '56px VT323, monospace';
     let score = this.props.players.find(player => player.paddle === 'left').score
     ctx.fillText(`${score}`, canvas.width / 4, canvas.height / 4);
-    console.log(this.props.players)
   }
 
   drawScoreRight = (ctx) => {
