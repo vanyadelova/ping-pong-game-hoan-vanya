@@ -4,10 +4,12 @@ import {logout} from './users'
 import {isExpired} from '../jwt'
 
 export const ADD_GAME = 'ADD_GAME'
-export const UPDATE_GAME = 'UPDATE_GAME'
+export const UPDATE_GAME_POSITION = 'UPDATE_GAME_POSITION'
 export const UPDATE_GAMES = 'UPDATE_GAMES'
 export const JOIN_GAME_SUCCESS = 'JOIN_GAME_SUCCESS'
 export const UPDATE_GAME_SUCCESS = 'UPDATE_GAME_SUCCESS'
+export const UPDATE_GAME_STATUS = 'UPDATE_GAME_STATUS'
+export const UPDATE_GAME_SCORE = 'UPDATE_GAME_SCORE'
 
 const updateGames = games => ({
   type: UPDATE_GAMES,
@@ -26,7 +28,6 @@ const updateGameSuccess = () => ({
 const joinGameSuccess = () => ({
   type: JOIN_GAME_SUCCESS
 })
-
 
 export const getGames = () => (dispatch, getState) => {
   const state = getState()

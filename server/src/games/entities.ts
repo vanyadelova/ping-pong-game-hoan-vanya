@@ -66,7 +66,7 @@ export class Game extends BaseEntity {
   @PrimaryGeneratedColumn()
   id?: number
 
-  @Column('integer', {nullable: true})
+  @Column('text', {nullable: true})
   winner: number
 
   @Column('text', {default: 'pending'})
@@ -93,7 +93,7 @@ export class Player extends BaseEntity {
   @Column()
   userId: number
 
-  @Column('text')
+  @Column('text', {nullable: true})
   paddle: Paddle
 
   @Column('integer', {nullable: true})
