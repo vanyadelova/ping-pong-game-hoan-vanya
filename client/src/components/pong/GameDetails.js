@@ -77,6 +77,7 @@ class GameDetails extends PureComponent {
       {
         game.status !== 'pending' && game.status !== 'finished' &&
         <Field 
+          id={game.id}  
           players={game.players} 
           userId={this.props.userId} 
           updatePaddlesPos={this.updatePaddlesPos}

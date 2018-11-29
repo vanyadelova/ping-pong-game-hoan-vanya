@@ -58,6 +58,15 @@ import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, Index, OneToMany, M
 import User from '../users/entity'
 
 export type Paddle = 'left' | 'right'
+export type Ball = {
+  x: number,
+  y: number
+}
+
+const defaultBall: Ball = {
+  x: 250,
+  y: 250
+}
 type Status = 'pending' | 'started' | 'finished'
 
 @Entity()
@@ -72,6 +81,8 @@ export class Game extends BaseEntity {
   @Column('text', {default: 'pending'})
   status: Status
 
+  @Column('json', {default: defaultBall})
+  ball: Ball
 
   @OneToMany(_ => Player, player => player.game, {eager:true})
   players: Player[]

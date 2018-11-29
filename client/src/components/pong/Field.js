@@ -177,7 +177,6 @@ class Field extends React.PureComponent {
       y += vy 
       
       vx = this.collide(x, y, vx, vy)
-      console.log(x, y, vx, vy)
       // if(x >= this.refs.canvas.width || x <= 0 ) {
       //   vx = this.bounce1(vx)
       //   this.props.updatePaddlesPos(vx, 'vx')
@@ -249,8 +248,8 @@ class Field extends React.PureComponent {
   //serving the ball
   serve = () => {
     
-    let x = this.refs.canvas.height/2
-    let y = this.refs.canvas.width/2
+    let x = this.props.games[this.props.id].ball.x
+    let y = this.props.games[this.props.id].ball.y
     this.moveBall(x, y)
   }
 
