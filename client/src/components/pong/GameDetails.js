@@ -53,8 +53,8 @@ class GameDetails extends PureComponent {
     if (game === null || users === null) return 'Loading...'
     if (!game) return 'Not found'
 
-    const player = game.players.find(p => p.userId === userId)
-    const opponent = game.players.find(p => p.userId !== userId)
+    // const player = game.players.find(p => p.userId === userId)
+    // const opponent = game.players.find(p => p.userId !== userId)
 
     return (<Paper className="outer-paper">
       <h1>Game #{game.id}</h1>
