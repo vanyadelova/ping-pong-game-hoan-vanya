@@ -177,16 +177,7 @@ class Field extends React.PureComponent {
       y += vy 
       
       vx = this.collide(x, y, vx, vy)
-      // if(x >= this.refs.canvas.width || x <= 0 ) {
-      //   vx = this.bounce1(vx)
-      //   this.props.updatePaddlesPos(vx, 'vx')
-      // }
-
-      // if(vx === undefined) {
-      //   vx = 2
-      //   this.props.updatePaddlesPos(vx, 'vx')
-      // }
-
+      
       if(y >= this.refs.canvas.height || y <= 0 ) {
         vy = this.bounce1(vy)
         this.props.updatePaddlesPos(vy, 'vy')

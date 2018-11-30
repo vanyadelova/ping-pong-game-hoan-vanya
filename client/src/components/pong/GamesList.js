@@ -48,6 +48,7 @@ class GamesList extends PureComponent {
   }
 
   render() {
+    console.log(this.props)
     const {games, users, authenticated, createGame} = this.props
 
     if (!authenticated) return (
@@ -65,7 +66,7 @@ class GamesList extends PureComponent {
       >
         Create Game
       </Button>
-
+      <h1>123</h1>
       <div>
         {games.map(game => this.renderGame(game))}
       </div>
