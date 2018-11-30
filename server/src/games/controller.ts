@@ -99,7 +99,7 @@ export default class GameController {
     if(update['score'] && update['score'] === player.paddle) {
       await player.score ++
     }
-    if(player.score === 100 ) {
+    if(player.score === 10 ) {
       game.status = 'finished'
       game.winner = player.userId
       await game.save()

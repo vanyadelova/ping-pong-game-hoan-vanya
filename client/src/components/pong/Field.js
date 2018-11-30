@@ -227,11 +227,6 @@ class Field extends React.PureComponent {
       
   }
    
-  //game sound
-  playSound = (x) => {
-    const sound = new Audio(x)
-    sound.play()
-  }
   //ball flew out of the field
   ballFlewOut = (x) => {
     return x <= 0 || x >= this.refs.canvas.width
